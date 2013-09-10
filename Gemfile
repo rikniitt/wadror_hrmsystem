@@ -45,6 +45,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 
+gem "twitter-bootstrap-rails"
 
 group :development, :test do
   gem 'sqlite3'
