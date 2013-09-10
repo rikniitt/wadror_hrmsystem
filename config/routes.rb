@@ -1,7 +1,11 @@
 Hrmsystem::Application.routes.draw do
+  root :to => 'rooms#index'
+
   resources :employees
 
   resources :rooms
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
