@@ -45,11 +45,12 @@ end
 # gem 'debugger', group: [:development, :test]
 
 
+
 group :development, :test do
   gem 'sqlite3'
 end
 
 group :production do
-   gem 'pg'
-   gem 'rails_stdout_logging' 
+	gem 'rails_12factor'
+   gem 'pg' 
 end
