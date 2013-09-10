@@ -23,6 +23,14 @@
     <%= f.label :telephone %><br>
     <%= f.text_field :telephone %>
   </div>
+  <div class="field">
+    <%= f.label :room_id, "Room" %><br>
+    <%= f.select :room_id, options_from_collection_for_select(@rooms, :id, :to_s) %>
+  </div>
+  <div class="field">
+    <%= f.label :department_id, "Department" %><br>
+    <%= f.select :department_id, options_from_collection_for_select(@departments, :id, :to_s) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

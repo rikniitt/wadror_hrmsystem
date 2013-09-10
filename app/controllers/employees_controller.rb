@@ -15,10 +15,14 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   def new
     @employee = Employee.new
+	 @rooms = Room.all
+	 @departments = Department.all
   end
 
   # GET /employees/1/edit
   def edit
+	 @rooms = Room.all
+	 @departments = Department.all
   end
 
   # POST /employees
@@ -69,6 +73,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:firstname, :lastname, :telephone)
+      params.require(:employee).permit(:firstname, :lastname, :telephone, :room_id, :department_id)
     end
 end

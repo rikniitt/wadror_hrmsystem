@@ -7,6 +7,7 @@
       <th>Lastname</th>
       <th>Telephone</th>
       <th>Room</th>
+      <th>Department</th>
       <th></th>
       <th></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= employee.lastname %></td>
         <td><%= employee.telephone %></td>
         <td><%= link_to employee.room.name, employee.room %></td>
+        <td><%= employee.department.name %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
