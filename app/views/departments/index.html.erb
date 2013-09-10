@@ -1,0 +1,23 @@
+<h1>Listing departments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departments.each do |depar| %>
+      <tr>
+        <td><%= depar.name %></td>
+        <td><%= link_to 'Destroy', depar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Department', new_department_path %>
