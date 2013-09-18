@@ -36,6 +36,8 @@ class EmployeesController < ApplicationController
         format.json { render action: 'show', status: :created, location: @employee }
       else
         format.html { render action: 'new' }
+        @rooms = Room.all
+		  @departments = Department.all
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
