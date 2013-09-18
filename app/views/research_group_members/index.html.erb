@@ -1,0 +1,29 @@
+<h1>Listing research_group_members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Research group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @research_group_members.each do |research_group_member| %>
+      <tr>
+        <td><%= research_group_member.employee_id %></td>
+        <td><%= research_group_member.research_group_id %></td>
+        <td><%= link_to 'Show', research_group_member %></td>
+        <td><%= link_to 'Edit', edit_research_group_member_path(research_group_member) %></td>
+        <td><%= link_to 'Destroy', research_group_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Research group member', new_research_group_member_path %>

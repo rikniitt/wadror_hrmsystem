@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @research_group_member.employee_id %>
+</p>
+
+<p>
+  <strong>Research group:</strong>
+  <%= @research_group_member.research_group_id %>
+</p>
+
+<%= link_to 'Edit', edit_research_group_member_path(@research_group_member) %> |
+<%= link_to 'Back', research_group_members_path %>

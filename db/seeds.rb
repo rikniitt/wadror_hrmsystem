@@ -21,3 +21,5 @@ cs.employees << mm
 
 
 group = ResearchGroup.create :name => "RAGE"
+
+ResearchGroupMember.create :employee_id => tt.id, :research_group_id => group.id
