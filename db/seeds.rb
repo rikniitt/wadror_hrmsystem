@@ -17,9 +17,12 @@ mm = Employee.create :firstname => "Maija", :lastname => "Malli", :telephone => 
 
 bk127.employees << tt
 bk127.employees << mm
+bk127.save
 
 cs.employees << tt
 cs.employees << mm
+cs.save
 
 group = ResearchGroup.create :name => "RAGE"
 group.members << tt
+group.save
