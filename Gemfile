@@ -46,6 +46,7 @@ end
 
 
 gem "twitter-bootstrap-rails"
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development, :test do
   gem 'sqlite3'

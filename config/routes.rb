@@ -1,4 +1,6 @@
 Hrmsystem::Application.routes.draw do
+  resources :users
+
   resources :research_group_members
 
   resources :research_groups
@@ -10,6 +12,14 @@ Hrmsystem::Application.routes.draw do
   resources :rooms
   
   resources :departments, :only => [:index, :new, :create, :destroy, :show]
+  
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  get 'signin', to: 'sessions#new'
+  get 'login', to: 'sessions#new'
+  
+  delete 'signout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
