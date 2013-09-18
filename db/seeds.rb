@@ -9,8 +9,8 @@
 
 cs = Department.create :name => "Tietojenkäsittelytieteen laitos"
 
-bk127 = Room.create :name => "bk127", :description => "työ tila", :capacity => 10, :floor => 2
-a111 = Room.create :name => "a111", :description => "luentosali", :capacity => 100, :floor => 1
+bk127 = Room.create :name => "BK127", :description => "työ tila", :capacity => 10, :floor => 2
+a111 = Room.create :name => "A111", :description => "luentosali", :capacity => 100, :floor => 1
 
 tt = Employee.create :firstname => "Teemu", :lastname => "Testaaja", :telephone => "040123123"
 mm = Employee.create :firstname => "Maija", :lastname => "Malli", :telephone => "050123123"
