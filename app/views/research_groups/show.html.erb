@@ -5,5 +5,14 @@
   <%= @research_group.name %>
 </p>
 
+<p>
+	<strong>Members (<%= @research_group.member_count %>):</strong>
+	<ul>
+		<% @research_group.members.each do |employee| %>
+			<li><%= link_to employee, employee %></li>
+		<% end %>
+	</ul>
+</p>
+
 <%= link_to 'Edit', edit_research_group_path(@research_group) %> |
 <%= link_to 'Back', research_groups_path %>

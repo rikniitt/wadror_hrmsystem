@@ -15,5 +15,14 @@
   <%= @employee.telephone %>
 </p>
 
+<p>
+  <strong>Belongs to Research Groups:</strong>
+  	<ul>
+		<% @employee.research_groups.each do |group| %>
+			<li><%= link_to group, group %></li>
+		<% end %>
+	</ul>
+</p>
+
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
