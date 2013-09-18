@@ -11,7 +11,7 @@
   <tbody>
     <% @departments.each do |depar| %>
       <tr>
-        <td><%= depar.name %></td>
+        <td><%= link_to depar.name, depar %></td>
         <td><%= link_to 'Destroy', depar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -9,7 +9,7 @@ Hrmsystem::Application.routes.draw do
 
   resources :rooms
   
-  resources :departments, :only => [:index, :new, :create, :destroy]
+  resources :departments, :only => [:index, :new, :create, :destroy, :show]
   
 
   # The priority is based upon order of creation: first created -> highest priority.

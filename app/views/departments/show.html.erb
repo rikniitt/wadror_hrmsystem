@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @department.name %>
+</p>
+
+<p>
+	<strong>Employees (<%= @department.employees.length %>):</strong>
+	<ul>
+		<% @department.employees.each do |employee| %>
+			<li><%= link_to employee, employee %></li>
+		<% end %>
+	</ul>
+</p>
+
+<%= link_to 'Back', departments_path %>
