@@ -18,3 +18,6 @@ mm = bk127.employees.create :firstname => "Maija", :lastname => "Malli", :teleph
 
 cs.employees << tt
 cs.employees << mm
+
+
+group = ResearchGroup.create :name => "RAGE"

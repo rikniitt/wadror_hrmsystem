@@ -1,4 +1,6 @@
 Hrmsystem::Application.routes.draw do
+  resources :research_groups
+
   root :to => 'rooms#index'
 
   resources :employees
