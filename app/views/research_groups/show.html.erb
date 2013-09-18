@@ -15,4 +15,5 @@
 </p>
 
 <%= link_to 'Edit', edit_research_group_path(@research_group), class: "btn" %>
+<%= link_to 'Add employee', new_research_group_member_path(research_group_id: @research_group.id), class: "btn" %>
 <%= link_to 'Back', research_groups_path, class: "btn" %>

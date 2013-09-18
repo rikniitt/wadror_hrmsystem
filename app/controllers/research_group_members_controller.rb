@@ -14,7 +14,11 @@ class ResearchGroupMembersController < ApplicationController
 
   # GET /research_group_members/new
   def new
-    @research_group_member = ResearchGroupMember.new
+		@research_group = ResearchGroup.find(params[:research_group_id])
+		redirect_to :back if @research_group.nil?
+		
+		@employees = Employee.all
+		@research_group_member = ResearchGroupMember.new
   end
 
   # GET /research_group_members/1/edit
@@ -24,17 +28,16 @@ class ResearchGroupMembersController < ApplicationController
   # POST /research_group_members
   # POST /research_group_members.json
   def create
-    @research_group_member = ResearchGroupMember.new(research_group_member_params)
 
-    respond_to do |format|
-      if @research_group_member.save
-        format.html { redirect_to @research_group_member, notice: 'Research group member was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @research_group_member }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @research_group_member.errors, status: :unprocessable_entity }
-      end
-    end
+		group = ResearchGroup.find(research_group_member_params[:research_group_id])
+		employee = Employee.find(research_group_member_params[:employee_id])
+
+		if group.nil? or employee.nil? or group.members.include? employee
+			redirect_to :back
+		else
+			group.members << employee
+			redirect_to group
+		end
   end
 
   # PATCH/PUT /research_group_members/1

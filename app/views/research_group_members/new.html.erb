@@ -1,5 +1,29 @@
 <h1>New research_group_member</h1>
 
-<%= render 'form' %>
+<%= form_for(@research_group_member) do |f| %>
+  <% if @research_group_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@research_group_member.errors.count, "error") %> prohibited this research_group_member from being saved:</h2>
 
-<%= link_to 'Back', research_group_members_path %>
+      <ul>
+      <% @research_group_member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.select :employee_id, options_from_collection_for_select(@employees, :id, :to_s) %>
+  </div>
+  
+	<%= f.hidden_field(:research_group_id,  :value => @research_group.id) %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Back', research_groups_path, :class => "btn" %>
