@@ -12,14 +12,14 @@ cs = Department.create :name => "Tietojenkäsittelytieteen laitos"
 bk127 = Room.create :name => "bk127", :description => "työ tila", :capacity => 10, :floor => 2
 a111 = Room.create :name => "a111", :description => "luentosali", :capacity => 100, :floor => 1
 
-tt = bk127.employees.create :firstname => "Teemu", :lastname => "Testaaja", :telephone => "040123123"
-mm = bk127.employees.create :firstname => "Maija", :lastname => "Malli", :telephone => "050123123"
+tt = Employee.create :firstname => "Teemu", :lastname => "Testaaja", :telephone => "040123123"
+mm = Employee.create :firstname => "Maija", :lastname => "Malli", :telephone => "050123123"
 
+bk127.employees << tt
+bk127.employees << mm
 
 cs.employees << tt
 cs.employees << mm
 
-
 group = ResearchGroup.create :name => "RAGE"
-
-ResearchGroupMember.create :employee_id => tt.id, :research_group_id => group.id
+group.members << tt
