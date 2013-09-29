@@ -6,4 +6,10 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rspec -f d spec/
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: "WQUlHaTF5Rn4rLNw3ktNjlaLqZzWjV06DPgVrv4O07e5gtxAYLbNi5CdPbvLqwQY5OoIpdf+G7HvCqS2RuRQm6SBnQSrZ8eBjVt2w5wB0kPX+5EhA7z1c9I2ZcoybAayNiBG8+1J2EHboaqFJ3QST+oK7NWM3kuvsru9OyfkcW0="
+  app: fathomless-citadel-9294
+  on:
+    repo: rikniitt/wadror_hrmsystem
