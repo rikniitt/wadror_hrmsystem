@@ -50,9 +50,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.0'
 end
 
 group :production do
-	gem 'rails_12factor'
+   gem 'rails_12factor'
    gem 'pg' 
 end
