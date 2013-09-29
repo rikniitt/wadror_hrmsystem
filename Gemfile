@@ -48,6 +48,14 @@ end
 gem "twitter-bootstrap-rails"
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov', :require => false
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
