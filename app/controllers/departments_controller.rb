@@ -11,6 +11,7 @@ class DepartmentsController < ApplicationController
 	
 	def new
 		@department = Department.new
+		@faculties = Faculty.all
 	end
 	
 	def create
@@ -26,6 +27,6 @@ class DepartmentsController < ApplicationController
 	
 	private
 		def department_params
-			params.require(:department).permit(:name)
+			params.require(:department).permit(:name, :faculty_id)
 		end
 end

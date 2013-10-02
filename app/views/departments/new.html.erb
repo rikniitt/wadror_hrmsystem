@@ -1,6 +1,17 @@
 <h1>Create new Department</h1>
 
 <%= form_for(@department) do |f| %>
-	name: <%= f.text_field :name %>
-	<%= f.submit %>
+
+	<div class="field">
+		<%= f.label :name, "Name" %><br>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :faculty_id, "Faculty" %><br>
+		<%= f.select :faculty_id, options_from_collection_for_select(@faculties, :id, :to_s) %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 <% end %>

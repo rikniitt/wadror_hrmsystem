@@ -6,6 +6,12 @@
 </p>
 
 <p>
+  <strong>Faculty:</strong>
+  <%= @department.faculty.name %>
+</p>
+
+
+<p>
 	<strong>Employees (<%= @department.employees.length %>):</strong>
 	<ul>
 		<% @department.employees.each do |employee| %>
