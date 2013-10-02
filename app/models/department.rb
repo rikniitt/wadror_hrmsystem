@@ -1,4 +1,5 @@
 class Department < ActiveRecord::Base
+	belongs_to :faculty
 	has_many :employees
 	
 	validates_presence_of :name

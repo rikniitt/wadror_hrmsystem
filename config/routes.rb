@@ -1,4 +1,6 @@
 Hrmsystem::Application.routes.draw do
+  resources :faculties
+
   resources :users
 
   resources :research_group_members

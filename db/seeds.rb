@@ -7,7 +7,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-cs = Department.create :name => "Tietojenkäsittelytieteen laitos"
+matlu = Faculty.create :name => "Matemaattis-luonnontieteellinen tiedekunta"
+
+cs = matlu.departments.create :name => "Tietojenkäsittelytieteen laitos"
 
 bk127 = Room.create :name => "BK127", :description => "työ tila", :capacity => 10, :floor => 2
 a111 = Room.create :name => "A111", :description => "luentosali", :capacity => 100, :floor => 1
